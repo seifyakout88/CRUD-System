@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap link css  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- main link css  -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+</head>
+
+<body>
+
+    <h2 class="text-center  text-black">CRUD System Application </h2>
+    <section class="py-5">
+        <div class="container">
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" oninput="validationInputs(this)" id="productName"
+                    placeholder="Product Name">
+                <p class=" text-danger d-none">It should start with an uppercase letter (A-Z), followed by 2-10
+                    lowercase letters (a-z)</p>
+                <label for="productName">Product Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" oninput="validationInputs(this)" id="productPrice"
+                    placeholder="Product Price">
+                <p class=" text-danger d-none">
+                    The price should be between 6,000 and 60,000</p>
+                <label for="productPrice">Product Price</label>
+            </div>
+
+
+            <div class="form-floating mb-3">
+                <input list="categoryList" type="text" oninput="validationInputs(this)" class="form-control"
+                    id="productCategory" placeholder="Product Category">
+                <p class=" text-danger d-none">It must be one of these statements Phones | Tv | Screens | Laptops </p>
+                <label for="productCategory">Product Category</label>
+                <p></p>
+            </div>
+
+            <datalist id="categoryList">
+                <option value="Tv">
+                <option value="Phones">
+                <option value="Screens">
+                <option value="Laptops">
+            </datalist>
+
+
+            <div class="form-floating mb-3 img-input">
+                <input accept="image/*" type="file" class="form-control" oninput="validationInputs(this)"
+                    id="productImg">
+                <p class=" text-danger d-none position-relative">
+                    The image path must be png or jpg</p>
+                <label for="productImg">Product Img</label>
+                <span id="upload"></span>
+            </div>
+
+
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Description" oninput="validationInputs(this)"
+                    id="Description"></textarea>
+                <p class=" text-danger d-none">
+                    It should be between 0 and 250 characters</p>
+                <label for="Description">Description</label>
+
+            </div>
+
+
+            <button class="btn btn-info add w-100 mt-3" onclick="addProduct()">Add</button>
+            <button class="btn btn-success w-100 mt-3 updateBtn d-none" onclick="updateProduct()">Update</button>
+
+        </div>
+    </section>
+
+
+
+
+    <section class="pb-5 ">
+        <div class="container">
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="productSearch" oninput="Search(this.value)"
+                    placeholder="Product Search">
+                <label for="productSearch">Product Search</label>
+
+            </div>
+
+            <div class="row gy-5 pt-5" id="showProduct">
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- bootstrap link js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- main link js -->
+    <script src="js/main.js"></script>
+    <!-- link sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
